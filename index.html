@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Assistant Chatbot</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>RecipeHub</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#visual-search">Visual Search</a></li>
+                <li><a href="#grocery">Grocery</a></li>
+                <li><a href="#chatbot" class="nav-chatbot-link">Chatbot</a></li>
+            </ul>
+            <div class="nav-language">
+                <select id="language">
+                    <option value="en">English</option>
+                    <option value="hi">Hindi</option>
+                    <option value="ta">Tamil</option>
+                    <option value="ml">Malayalam</option>
+                    <option value="te">Telugu</option>
+                    <option value="kn">Kannada</option>
+                    <option value="bn">Bengali</option>
+                    <option value="pa">Punjabi</option>
+                    <option value="gu">Gujarati</option>
+                    <option value="mr">Marathi</option>
+                    <option value="or">Odia</option>
+                    <option value="es">Spanish</option>
+                    <option value="fr">French</option>
+                    <option value="de">German</option>
+                    <option value="zh">Chinese</option>
+                </select>
+                <select id="profile" title="Household Profile" style="margin-left:10px;">
+                    <option value="single">Single</option>
+                    <option value="couple">Couple</option>
+                    <option value="family4" selected>Family of 4</option>
+                    <option value="custom">Custom</option>
+                </select>
+                <select id="diet" title="Diet Preference" style="margin-left:10px;">
+                    <option value="non-veg" selected>Non-veg</option>
+                    <option value="vegetarian">Vegetarian</option>
+                    <option value="vegan">Vegan</option>
+                    <option value="eggetarian">Eggetarian</option>
+                </select>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span><i class="fas fa-star"></i> #1 AI Recipe Assistant</span>
+            </div>
+            <h1>Welcome to RecipeHub</h1>
+            <p class="hero-subtitle">Your intelligent cooking companion powered by advanced AI technology</p>
+            <p class="hero-description">Discover thousands of delicious recipes, get personalized cooking guidance, and shop fresh ingredients seamlessly. From quick weeknight dinners to festive celebrations, we've got every meal covered.</p>
+            
+            <div class="hero-features">
+                <div class="feature-item">
+                    <i class="fas fa-robot"></i>
+                    <span>AI-Powered Recipes</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-language"></i>
+                    <span>Multi-Language Support</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Integrated Shopping</span>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-users"></i>
+                    <span>Family Profiles</span>
+                </div>
+            </div>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <h3>10,000+</h3>
+                    <p>Recipes Available</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>Languages Supported</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50,000+</h3>
+                    <p>Happy Users</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4.8★</h3>
+                    <p>User Rating</p>
+                </div>
+            </div>
+
+            <div class="hero-actions">
+                <a href="#collections" class="cta-btn primary">Explore Recipes</a>
+                <a href="#chatbot" class="cta-btn secondary">
+                    <i class="fas fa-comments"></i>
+                    Ask AI Chef
+                </a>
+            </div>
+
+            <div class="hero-trust">
+                <p>Trusted by home cooks worldwide</p>
+                <div class="trust-badges">
+                    <span class="trust-badge">
+                        <i class="fas fa-shield-alt"></i>
+                        Safe & Secure
+                    </span>
+                    <span class="trust-badge">
+                        <i class="fas fa-clock"></i>
+                        24/7 Available
+                    </span>
+                    <span class="trust-badge">
+                        <i class="fas fa-mobile-alt"></i>
+                        Mobile Friendly
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero Background Elements -->
+        <div class="hero-bg-elements">
+            <div class="floating-element element-1">
+                <i class="fas fa-utensils"></i>
+            </div>
+            <div class="floating-element element-2">
+                <i class="fas fa-pepper-hot"></i>
+            </div>
+            <div class="floating-element element-3">
+                <i class="fas fa-carrot"></i>
+            </div>
+            <div class="floating-element element-4">
+                <i class="fas fa-apple-alt"></i>
+            </div>
+        </div>
+    </section>
+
+    <section id="collections" class="collections-section">
+        <div class="container">
+            <h2>Explore Recipes by Country</h2>
+            <p class="collections-subtitle">Discover authentic cuisines from around the world</p>
+            
+            <!-- Country Selection -->
+            <div class="country-selector-wrapper">
+                <div class="country-selector">
+                    <label for="country-select">Select a Country:</label>
+                    <select id="country-select">
+                        <option value="">-- Choose a Country --</option>
+                        <option value="india">India</option>
+                        <option value="italy">Italy</option>
+                        <option value="thailand">Thailand</option>
+                        <option value="mexico">Mexico</option>
+                        <option value="japan">Japan</option>
+                        <option value="france">France</option>
+                        <option value="china">China</option>
+                        <option value="spain">Spain</option>
+                        <option value="greece">Greece</option>
+                        <option value="turkey">Turkey</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Category Filter (shown when country is selected) -->
+            <div id="category-filter" class="category-filter" style="display: none;">
+                <button class="category-btn active" data-category="all">All Recipes</button>
+                <button class="category-btn" data-category="quick-meals">Quick Meals</button>
+                <button class="category-btn" data-category="healthy">Healthy</button>
+                <button class="category-btn" data-category="vegetarian">Vegetarian</button>
+                <button class="category-btn" data-category="desserts">Desserts</button>
+            </div>
+
+            <!-- Recipe Collections Grid -->
+            <div class="collections-grid">
+                <div class="collection-card" data-category="quick-meals">
+                    <div class="card-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Quick Meals</h3>
+                        <p>Ready in 30 minutes or less</p>
+                        <div class="recipe-list">
+                            <ul>
+                                <li>Quick Vegetable Stir Fry</li>
+                                <li>Instant Noodles with Vegetables</li>
+                                <li>15-Minute Egg Curry</li>
+                                <li>Quick Chicken Sandwich</li>
+                                <li>Microwave Mug Cake</li>
+                            </ul>
+                        </div>
+                        <span class="recipe-count">5 recipes</span>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="explore-btn">Explore Recipes</button>
+                    </div>
+                </div>
+
+                <div class="collection-card" data-category="healthy-options">
+                    <div class="card-icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Healthy Options</h3>
+                        <p>Nutritious and delicious meals</p>
+                        <div class="recipe-list">
+                            <ul>
+                                <li>Quinoa Salad Bowl</li>
+                                <li>Grilled Chicken with Vegetables</li>
+                                <li>Green Smoothie Bowl</li>
+                                <li>Steamed Fish with Herbs</li>
+                                <li>Vegetable Soup</li>
+                            </ul>
+                        </div>
+                        <span class="recipe-count">5 recipes</span>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="explore-btn">Explore Recipes</button>
+                    </div>
+                </div>
+
+                <div class="collection-card" data-category="regional-cuisines">
+                    <div class="card-icon">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Regional Cuisines</h3>
+                        <p>Authentic flavors from across India</p>
+                        <div class="recipe-list">
+                            <ul>
+                                <li>South Indian Sambar</li>
+                                <li>Punjabi Butter Chicken</li>
+                                <li>Bengali Fish Curry</li>
+                                <li>Gujarati Dhokla</li>
+                                <li>Maharashtrian Misal Pav</li>
+                            </ul>
+                        </div>
+                        <span class="recipe-count">5 recipes</span>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="explore-btn">Explore Recipes</button>
+                    </div>
+                </div>
+
+                <div class="collection-card" data-category="festival-specials">
+                    <div class="card-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Festival Specials</h3>
+                        <p>Traditional recipes for celebrations</p>
+                        <div class="recipe-list">
+                            <ul>
+                                <li>Diwali Sweets Platter</li>
+                                <li>Christmas Cake</li>
+                                <li>Eid Special Biryani</li>
+                                <li>Holi Gujiya</li>
+                                <li>Navratri Fasting Recipes</li>
+                            </ul>
+                        </div>
+                        <span class="recipe-count">5 recipes</span>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="explore-btn">Explore Recipes</button>
+                    </div>
+                </div>
+
+                <div class="collection-card" data-category="comfort-food">
+                    <div class="card-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Comfort Food</h3>
+                        <p>Soul-warming family favorites</p>
+                        <div class="recipe-list">
+                            <ul>
+                                <li>Homestyle Dal Rice</li>
+                                <li>Creamy Tomato Soup</li>
+                                <li>Aloo Paratha</li>
+                                <li>Chicken Soup</li>
+                                <li>Masala Chai with Biscuits</li>
+                            </ul>
+                        </div>
+                        <span class="recipe-count">5 recipes</span>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="explore-btn">Explore Recipes</button>
+                    </div>
+                </div>
+
+                <div class="collection-card" data-category="desserts">
+                    <div class="card-icon">
+                        <i class="fas fa-birthday-cake"></i>
+                    </div>
+                    <div class="card-content">
+                        <h3>Sweet Treats</h3>
+                        <p>Desserts and sweet delights</p>
+                        <div class="recipe-list">
+                            <ul>
+                                <li>Chocolate Brownie</li>
+                                <li>Gulab Jamun</li>
+                                <li>Fruit Custard</li>
+                                <li>Ice Cream Sundae</li>
+                                <li>Ras Malai</li>
+                            </ul>
+                        </div>
+                        <span class="recipe-count">5 recipes</span>
+                    </div>
+                    <div class="card-overlay">
+                        <button class="explore-btn">Explore Recipes</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Recipe of the Day -->
+            <div class="featured-recipe">
+                <div class="featured-content">
+                    <div class="featured-text">
+                        <h3>Recipe of the Day</h3>
+                        <p class="recipe-date" id="recipe-date">Loading...</p>
+                        <h4>Butter Chicken</h4>
+                        <p>A creamy, aromatic curry that's perfect for any occasion. Ready in just 45 minutes!</p>
+                        <div class="recipe-stats">
+                            <span><i class="fas fa-clock"></i> 45 min</span>
+                            <span><i class="fas fa-users"></i> 4 servings</span>
+                            <span><i class="fas fa-star"></i> 4.8/5</span>
+                        </div>
+                        <button class="try-recipe-btn">Try This Recipe</button>
+                    </div>
+                    <div class="featured-image">
+                        <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400&h=300&fit=crop" alt="Butter Chicken" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="visual-search" class="visual-search-section">
+        <div class="container">
+            <h2>Visual Recipe Search</h2>
+            <p class="visual-search-subtitle">Upload a photo of any dish and discover its recipe with AI-powered analysis</p>
+            
+            <div class="visual-search-container">
+                <div class="upload-area" id="upload-area">
+                    <div class="upload-content">
+                        <div class="upload-icon">
+                            <i class="fas fa-camera"></i>
+                        </div>
+                        <h3>Upload Food Photo</h3>
+                        <p>Drag & drop your food image here or click to browse</p>
+                        <input type="file" id="photo-input" accept="image/*" hidden>
+                        <button class="upload-btn" id="upload-btn">
+                            <i class="fas fa-upload"></i>
+                            Choose Photo
+                        </button>
+                        <div class="upload-formats">
+                            <small>Supports: JPG, PNG, WEBP (Max 10MB)</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="camera-capture" id="camera-section" style="display: none;">
+                    <video id="camera-video" autoplay playsinline></video>
+                    <canvas id="camera-canvas" style="display: none;"></canvas>
+                    <div class="camera-controls">
+                        <button id="capture-btn" class="capture-btn">
+                            <i class="fas fa-camera"></i>
+                            Capture Photo
+                        </button>
+                        <button id="stop-camera-btn" class="stop-camera-btn">
+                            <i class="fas fa-times"></i>
+                            Cancel
+                        </button>
+                    </div>
+                </div>
+
+                <div class="camera-toggle">
+                    <button id="use-camera-btn" class="camera-toggle-btn">
+                        <i class="fas fa-video"></i>
+                        Use Camera Instead
+                    </button>
+                </div>
+            </div>
+
+            <div class="analysis-results" id="analysis-results" style="display: none;">
+                <div class="results-header">
+                    <h3>Recipe Analysis Results</h3>
+                    <div class="confidence-score">
+                        <span>Confidence: </span>
+                        <div class="confidence-bar">
+                            <div class="confidence-fill" id="confidence-fill"></div>
+                        </div>
+                        <span id="confidence-text">0%</span>
+                    </div>
+                </div>
+
+                <div class="results-content">
+                    <div class="uploaded-image">
+                        <img id="analyzed-image" src="" alt="Uploaded food image">
+                        <div class="image-overlay">
+                            <button class="retry-btn" id="retry-analysis">
+                                <i class="fas fa-redo"></i>
+                                Try Another Photo
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="recipe-details">
+                        <div class="dish-identification">
+                            <h4 id="dish-name">Identified Dish</h4>
+                            <p id="dish-description">AI analysis of the uploaded image</p>
+                        </div>
+
+                        <div class="recipe-tabs">
+                            <button class="tab-btn active" data-tab="ingredients">
+                                <i class="fas fa-list"></i>
+                                Ingredients
+                            </button>
+                            <button class="tab-btn" data-tab="instructions">
+                                <i class="fas fa-clipboard-list"></i>
+                                Instructions
+                            </button>
+                            <button class="tab-btn" data-tab="nutrition">
+                                <i class="fas fa-chart-pie"></i>
+                                Nutrition
+                            </button>
+                        </div>
+
+                        <div class="tab-content">
+                            <div class="tab-panel active" id="ingredients-panel">
+                                <div class="ingredients-list" id="ingredients-list">
+                                    <!-- Ingredients will be populated here -->
+                                </div>
+                            </div>
+
+                            <div class="tab-panel" id="instructions-panel">
+                                <div class="cooking-instructions" id="cooking-instructions">
+                                    <!-- Instructions will be populated here -->
+                                </div>
+                            </div>
+
+                            <div class="tab-panel" id="nutrition-panel">
+                                <div class="nutrition-info" id="nutrition-info">
+                                    <!-- Nutrition info will be populated here -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="recipe-actions">
+                            <button class="action-btn save-recipe" id="save-recipe">
+                                <i class="fas fa-heart"></i>
+                                Save Recipe
+                            </button>
+                            <button class="action-btn share-recipe" id="share-recipe">
+                                <i class="fas fa-share"></i>
+                                Share Recipe
+                            </button>
+                            <button class="action-btn cook-now" id="cook-now">
+                                <i class="fas fa-play"></i>
+                                Start Cooking
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading-analysis" id="loading-analysis" style="display: none;">
+                <div class="loading-content">
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                    </div>
+                    <h3>Analyzing Your Photo...</h3>
+                    <p>Our AI is identifying the dish and generating the recipe</p>
+                    <div class="loading-steps">
+                        <div class="step active" id="step-1">
+                            <i class="fas fa-eye"></i>
+                            <span>Analyzing Image</span>
+                        </div>
+                        <div class="step" id="step-2">
+                            <i class="fas fa-search"></i>
+                            <span>Identifying Dish</span>
+                        </div>
+                        <div class="step" id="step-3">
+                            <i class="fas fa-list"></i>
+                            <span>Generating Recipe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Chatbot Widget -->
+    <div id="chatbot-widget" class="chatbot-widget">
+        <!-- Chatbot Toggle Button -->
+        <button id="chatbot-toggle" class="chatbot-toggle" title="Open Recipe Assistant">
+            <i class="fas fa-comments"></i>
+            <span class="chatbot-badge">1</span>
+        </button>
+
+        <!-- Chatbot Window -->
+        <div id="chatbot-window" class="chatbot-window hidden">
+            <!-- Header -->
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <i class="fas fa-robot"></i>
+                    <span>Recipe Assistant</span>
+                </div>
+                <button id="chatbot-close" class="chatbot-close" title="Close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- Messages Area -->
+            <div id="chat-messages" class="chat-messages"></div>
+
+            <!-- Input Area -->
+            <div class="chat-input">
+                <input type="text" id="user-input" placeholder="Ask for a recipe...">
+                <button id="voice-btn" class="voice-btn" title="Voice Input">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <button id="send-btn" class="send-btn" title="Send">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <section id="grocery" class="grocery-section">
+        <div class="container">
+            <h2>Grocery Shopping</h2>
+            <div class="grocery-search">
+                <input type="text" id="grocery-search" placeholder="Search for groceries...">
+                <button id="search-grocery-btn"><i class="fas fa-search"></i> Search</button>
+            </div>
+            <div class="grocery-categories">
+                <button class="category-btn" data-category="vegetables"><i class="fas fa-carrot"></i> Vegetables</button>
+                <button class="category-btn" data-category="fruits"><i class="fas fa-apple-alt"></i> Fruits</button>
+                <button class="category-btn" data-category="dairy"><i class="fas fa-cheese"></i> Dairy</button>
+                <button class="category-btn" data-category="spices"><i class="fas fa-pepper-hot"></i> Spices</button>
+            </div>
+            <div id="grocery-results" class="grocery-results"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 RecipeHub. Powered by Gemini AI and Blinkit.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="voice.js"></script>
+</body>
+</html>
